@@ -1,0 +1,34 @@
+{
+  "name": "hapi-require-https",
+  "version": "1.0.0",
+  "description": "hapi http -> https redirection for servers behind a reverse proxy",
+  "main": "./src",
+  "scripts": {
+    "test": "lab"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bendrucker/hapi-require-https.git"
+  },
+  "keywords": [
+    "hapi",
+    "https",
+    "redirect",
+    "paas",
+    "heroku"
+  ],
+  "author": "Ben Drucker <bvdrucker@gmail.com> (http://www.bendrucker.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bendrucker/hapi-require-https/issues"
+  },
+  "homepage": "https://github.com/bendrucker/hapi-require-https",
+  "devDependencies": {
+    "code": "~1.2.0",
+    "hapi": "~7.1.1",
+    "lab": "~5.0.1"
+  },
+  "peerDependencies": {
+    "hapi": "6 || 7"
+  }
+}
