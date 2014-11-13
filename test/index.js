@@ -39,6 +39,20 @@ describe('hapi-require-https', function () {
     });
   });
 
+  it('includes the query string in redirects', function (done) {
+    server.inject({
+      url: '/?test=test&test2=test2',
+      headers: {
+        host: 'host',
+        'x-forwarded-proto': 'http'
+      }
+    }, function (response) {
+      expect(response.statusCode).to.equal(301);
+      expect(response.headers.location).to.equal('https://host/?test=test&test2=test2');
+      done();
+    });
+  });
+
   it('ignores all other requests', function (done) {
     server.inject({
       url: '/',
@@ -53,4 +67,4 @@ describe('hapi-require-https', function () {
     });
   });
 
-})
+});

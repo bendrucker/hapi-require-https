@@ -18,6 +18,9 @@
     "heroku"
   ],
   "author": "Ben Drucker <bvdrucker@gmail.com> (http://www.bendrucker.me/)",
+  "contibutors": [
+    "Brian Delahunty <brian@briandela.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bendrucker/hapi-require-https/issues"
