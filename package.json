@@ -1,6 +1,6 @@
 {
   "name": "hapi-require-https",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "hapi http -> https redirection for servers behind a reverse proxy",
   "main": "./src",
   "scripts": {
@@ -18,6 +18,10 @@
     "heroku"
   ],
   "author": "Ben Drucker <bvdrucker@gmail.com> (http://www.bendrucker.me/)",
+  "contibutors": [{
+    "name": "Brian Delahunty",
+    "email": "brian@briandela.com"
+  }],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bendrucker/hapi-require-https/issues"
