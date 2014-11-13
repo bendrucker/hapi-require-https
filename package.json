@@ -1,6 +1,6 @@
 {
   "name": "hapi-require-https",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "hapi http -> https redirection for servers behind a reverse proxy",
   "main": "./src",
   "scripts": {
