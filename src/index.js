@@ -1,13 +1,13 @@
 'use strict';
 
-exports.register = function (plugin, options, next) {
-  plugin.ext('onRequest', function (request, next) {
+exports.register = function (server, options, next) {
+  server.ext('onRequest', function (request, reply) {
     if (request.headers['x-forwarded-proto'] === 'http') {
-      return next('Redirecting to https')
+      return reply('Redirecting to https')
         .redirect('https://' + request.headers.host + request.url.path)
         .code(301);
     }
-    next();
+    reply.continue();
   });
   next();
 };
