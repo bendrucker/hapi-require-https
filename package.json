@@ -28,10 +28,10 @@
   "homepage": "https://github.com/bendrucker/hapi-require-https",
   "devDependencies": {
     "code": "~1.2.0",
-    "hapi": "8",
+    "hapi": "^9.0.3",
     "lab": "~5.0.1"
   },
   "peerDependencies": {
-    "hapi": "8"
+    "hapi": ">=8 <10"
   }
 }
