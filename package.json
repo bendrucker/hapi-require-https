@@ -19,7 +19,8 @@
   ],
   "author": "Ben Drucker <bvdrucker@gmail.com> (http://www.bendrucker.me/)",
   "contributors": [
-    "Brian Delahunty <brian@briandela.com>"
+    "Brian Delahunty <brian@briandela.com>",
+    "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com/)
   ],
   "license": "MIT",
   "bugs": {
@@ -32,6 +33,6 @@
     "lab": "~5.10.0"
   },
   "peerDependencies": {
-    "hapi": ">=8 <11"
+    "hapi": ">=8 <=11"
   }
 }
