@@ -2,9 +2,9 @@
   "name": "hapi-require-https",
   "version": "2.0.2",
   "description": "hapi http -> https redirection for servers behind a reverse proxy",
-  "main": "./src",
+  "main": "index.js",
   "scripts": {
-    "test": "lab"
+    "test": "lab test.js"
   },
   "repository": {
     "type": "git",

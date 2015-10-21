@@ -15,7 +15,7 @@ describe('hapi-require-https', function () {
 
   var server = new hapi.Server();
   server.connection();
-  server.register(require('../'), function (err) {
+  server.register(require('./'), function (err) {
     if (err) throw err;
   });
   server.route({
