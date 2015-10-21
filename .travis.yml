@@ -1,12 +1,3 @@
 language: node_js
 node_js:
 - '4.0'
-deploy:
-  provider: npm
-  email: bvdrucker@gmail.com
-  api_key:
-    secure: S4hRSSzYEzdWtGWFb2eddj1e2JNkKSr21NsAH30de/QsCUi88BaNYiPRhUXypDM6qlIwkgWy9aXb3ZXyXvuNF62T1+guAJuBQy0Ou8cP4QIvd66hazVaJo7afEMNqdqJQCnRaLp7SVH4xmL3uizt7pRAOjahsAWooGIYBybJZ2I=
-  on:
-    tags: true
-    all_branches: true
-    repo: bendrucker/hapi-require-https
