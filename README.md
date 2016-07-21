@@ -1,9 +1,9 @@
 hapi-require-https [![Build Status](https://travis-ci.org/bendrucker/hapi-require-https.svg?branch=master)](https://travis-ci.org/bendrucker/hapi-require-https)
 ==================
 
-> hapi plugin that adds http to https redirection for servers behind a reverse proxy
+> hapi plugin that adds http to https redirection
 
-Any incoming request with `'http'` in `X-Forwarded-Proto` will be redirected (301) to the same host and path with `'https'` as the protocol. 
+By default, any incoming request with `'http'` in `X-Forwarded-Proto` will be redirected (301) to the same host and path with `'https'` as the protocol. You can optionally disable proxy mode and redirect based on the actual request protocol.
 
 ## Usage
 
