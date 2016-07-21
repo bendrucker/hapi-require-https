@@ -19,6 +19,20 @@ test('proxied requests', function (t) {
   })
 })
 
+test('un-proxied requests: options = {proxy: false}', function (t) {
+  t.plan(2)
+
+  Server({proxy: false}).inject({
+    url: '/',
+    headers: {
+      host: 'host'
+    }
+  }, function (response) {
+    t.equal(response.statusCode, 301, 'sets 301 code')
+    t.equal(response.headers.location, 'https://host/', 'sets Location header')
+  })
+})
+
 test('query string', function (t) {
   t.plan(2)
 
