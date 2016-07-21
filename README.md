@@ -10,7 +10,30 @@ Any incoming request with `'http'` in `X-Forwarded-Proto` will be redirected (30
 Just [load the plugin](http://hapijs.com/tutorials/plugins#loading-a-plugin) and go!
 
 ```js
-server.register(redirect, function (err) {
-  console.error(err)
+server.register({
+  register: require('hapi-require-https'),
+  options: {}
 })
 ```
+
+## API
+
+#### `plugin.register(server, [options], next)`
+
+Registers the plugin to run `onRequest` in the [request lifecycle](http://hapijs.com/api#request-lifecycle). 
+
+##### options
+
+Type: `object`  
+Default: `{}`
+
+###### proxy
+
+Type: `boolean`  
+Default: `true`
+
+Indicates whether the server expects requests coming from a reverse proxy (a common Node web server setup) or directly from the Internet. Set this to `false` if you'd like to redirect based on the *actual* protocol instead of the [`X-Forwarded-Proto`](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Common_non-standard_response_fields) header.
+
+## License
+
+MIT © [Ben Drucker](http://bendrucker.me)
