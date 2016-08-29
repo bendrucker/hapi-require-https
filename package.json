@@ -27,12 +27,12 @@
   },
   "homepage": "https://github.com/bendrucker/hapi-require-https",
   "devDependencies": {
-    "hapi": "^14.0.0",
+    "hapi": "^15.0.0",
     "standard": "^8.0.0",
     "tape": "~4.6.0"
   },
   "peerDependencies": {
-    "hapi": ">=8 <15"
+    "hapi": ">=8 <16"
   },
   "files": [
     "*.js"
