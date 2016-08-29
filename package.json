@@ -1,6 +1,6 @@
 {
   "name": "hapi-require-https",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "hapi http -> https redirection",
   "main": "index.js",
   "scripts": {
