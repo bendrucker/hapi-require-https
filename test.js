@@ -2,6 +2,7 @@
 
 var test = require('tape')
 var hapi = require('hapi')
+var http = require('http')
 var plugin = require('./')
 
 test('proxied requests', function (t) {
@@ -64,6 +65,35 @@ test('ignores unmatched', function (t) {
   }, function (response) {
     t.equal(response.statusCode, 200, 'receives 200')
     t.equal(response.result, 'Hello!', 'receives body')
+  })
+})
+
+test('multiple connections', function (t) {
+  t.plan(1)
+
+  var server = new hapi.Server()
+  var main = server.connection({labels: 'a'})
+
+  server.connection({labels: 'b'})
+
+  main.register({
+    register: plugin,
+    options: {
+      proxy: false
+    }
+  }, throwErr)
+
+  server.start(function (err) {
+    if (err) return t.end(err)
+
+    var info = main.info
+    var url = info.protocol + '://' + info.host + ':' + info.port
+
+    http.request(url, function (res) {
+      t.equal(res.statusCode, 301)
+      server.stop(t.end)
+    })
+    .end()
   })
 })
 

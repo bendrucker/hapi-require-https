@@ -4,7 +4,7 @@ exports.register = function (server, options, next) {
   server.ext('onRequest', function (request, reply) {
     var redirect = options.proxy !== false
       ? request.headers['x-forwarded-proto'] === 'http'
-      : request.server.info.protocol === 'http'
+      : request.connection.info.protocol === 'http'
 
     if (redirect) {
       return reply()
