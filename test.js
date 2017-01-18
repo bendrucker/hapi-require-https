@@ -97,6 +97,22 @@ test('multiple connections', function (t) {
   })
 })
 
+test('x-forward-host support', function (t) {
+  t.plan(2)
+
+  Server().inject({
+    url: '/',
+    headers: {
+      host: 'host',
+      'x-forwarded-proto': 'http',
+      'x-forwarded-host': 'host2'
+    }
+  }, function (response) {
+    t.equal(response.statusCode, 301, 'sets 301 code')
+    t.equal(response.headers.location, 'https://host2/', 'sets Location header')
+  })
+})
+
 function Server (options) {
   var server = new hapi.Server()
   server.connection()

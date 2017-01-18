@@ -5,10 +5,11 @@ exports.register = function (server, options, next) {
     var redirect = options.proxy !== false
       ? request.headers['x-forwarded-proto'] === 'http'
       : request.connection.info.protocol === 'http'
+    var host = request.headers['x-forwarded-host'] || request.headers.host;
 
     if (redirect) {
       return reply()
-        .redirect('https://' + request.headers.host + request.url.path)
+        .redirect('https://' + host + request.url.path)
         .code(301)
     }
     reply.continue()
