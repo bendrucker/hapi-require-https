@@ -8,8 +8,8 @@ const register = async function (server, options) {
     var host = request.headers['x-forwarded-host'] || request.headers.host
 
     if (redirect) {
-      return h.redirect('https://' + host + request.url.path)
-        .temporary();
+      return h.redirect('https://');// + host + request.url.path)
+        // .temporary();
     }
     return h.continue;
   });

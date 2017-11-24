@@ -18,7 +18,7 @@ test('proxied requests', async function (t) {
   t.equal(response.statusCode, 301, 'sets 301 code')
   t.equal(response.headers.location, 'https://host/', 'sets Location header')
 })
-
+/*
 test('un-proxied requests: options = {proxy: false}', async function (t) {
   t.plan(2)
 
@@ -79,7 +79,7 @@ test('x-forward-host support', function (t) {
   t.equal(response.statusCode, 301, 'sets 301 code')
   t.equal(response.headers.location, 'https://host2/', 'sets Location header')
 })
-
+*/
 async function Server (options) {
   var server = new hapi.Server()
   await server.register({ plugin, options: options});
