@@ -18,12 +18,12 @@ test('proxied requests', async function (t) {
   t.equal(response.statusCode, 301, 'sets 301 code')
   t.equal(response.headers.location, 'https://host/', 'sets Location header')
 })
-/*
+
 test('un-proxied requests: options = {proxy: false}', async function (t) {
   t.plan(2)
 
   const server = await Server({proxy: false});
-  const response = server.inject({
+  const response = await  server.inject({
     url: '/',
     headers: {
       host: 'host'
@@ -35,8 +35,8 @@ test('un-proxied requests: options = {proxy: false}', async function (t) {
 
 test('query string', async function (t) {
   t.plan(2)
-
-  const response = await Server().inject({
+  const server = await Server();
+  const response = await server.inject({
     url: '/?test=test&test2=test2',
     headers: {
       host: 'host',
@@ -54,7 +54,8 @@ test('query string', async function (t) {
 test('ignores unmatched', async function (t) {
   t.plan(2)
 
-  const response = await Server().inject({
+  const server = await Server();
+  const response = await server.inject({
     url: '/',
     headers: {
       host: 'host',
@@ -65,10 +66,11 @@ test('ignores unmatched', async function (t) {
   t.equal(response.result, 'Hello!', 'receives body')
 })
 
-test('x-forward-host support', function (t) {
+test('x-forward-host support', async function (t) {
   t.plan(2)
 
-  const response = Server().inject({
+  const server = await Server();
+  const response = await server.inject({
     url: '/',
     headers: {
       host: 'host',
@@ -79,16 +81,18 @@ test('x-forward-host support', function (t) {
   t.equal(response.statusCode, 301, 'sets 301 code')
   t.equal(response.headers.location, 'https://host2/', 'sets Location header')
 })
-*/
+
 async function Server (options) {
-  var server = new hapi.Server()
-  await server.register({ plugin, options: options});
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: function (request, h) {
-      return 'Hello!'
-    }
-  })
-  return Promise.resolve(server);
+  return new Promise(async (resolve, reject) => {
+    var server = new hapi.Server()
+    await server.register({ plugin, options});
+    server.route({
+      method: 'GET',
+      path: '/',
+      handler: function (request, h) {
+        return 'Hello!'
+      }
+    })
+    return resolve(server);
+  });
 }
