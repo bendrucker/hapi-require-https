@@ -1,22 +1,22 @@
 'use strict'
 
-exports.register = function (server, options, next) {
-  server.ext('onRequest', function (request, reply) {
-    var redirect = options.proxy !== false
+const register = async function (server, options) {
+  server.ext('onRequest', async function (request, h) {
+    const redirect = options.proxy !== false
       ? request.headers['x-forwarded-proto'] === 'http'
-      : request.connection.info.protocol === 'http'
-    var host = request.headers['x-forwarded-host'] || request.headers.host
-
+      : request.server.info.protocol === 'http'
+    const host = request.headers['x-forwarded-host'] || request.headers.host
     if (redirect) {
-      return reply()
-        .redirect('https://' + host + request.url.path)
-        .code(301)
+      return h.redirect('https://' + host + request.url.path)
+        .permanent()
+        .takeover()
     }
-    reply.continue()
+    return h.continue
   })
-  next()
 }
 
-exports.register.attributes = {
+exports.plugin = {
+  register,
+  once: true,
   pkg: require('./package.json')
 }
