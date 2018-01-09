@@ -7,18 +7,18 @@ By default, any incoming request with `'http'` in `X-Forwarded-Proto` will be re
 
 ## Usage
 
-Just [load the plugin](http://hapijs.com/tutorials/plugins#loading-a-plugin) and go!
+Just [register the plugin](https://github.com/hapijs/hapi/blob/master/API.md#server.register()) and go!
 
 ```js
 server.register({
-  register: require('hapi-require-https'),
+  plugin: require('hapi-require-https'),
   options: {}
 })
 ```
 
 ## API
 
-#### `plugin.register(server, [options], next)`
+#### `plugin.register(server, [options])`
 
 Registers the plugin to run `onRequest` in the [request lifecycle](http://hapijs.com/api#request-lifecycle). 
 
