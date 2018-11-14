@@ -2,7 +2,7 @@
 
 var pkg = require('./package.json')
 
-module.exports = {register, name: pkg.name}
+module.exports = { register, name: pkg.name }
 
 function register (server, options) {
   server.ext('onRequest', function (request, h) {
