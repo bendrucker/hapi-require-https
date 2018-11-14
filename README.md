@@ -1,4 +1,4 @@
-hapi-require-https [![Build Status](https://travis-ci.org/bendrucker/hapi-require-https.svg?branch=master)](https://travis-ci.org/bendrucker/hapi-require-https)
+hapi-require-https [![Build Status](https://travis-ci.org/bendrucker/hapi-require-https.svg?branch=master)](https://travis-ci.org/bendrucker/hapi-require-https) [![Greenkeeper badge](https://badges.greenkeeper.io/bendrucker/hapi-require-https.svg)](https://greenkeeper.io/)
 ==================
 
 > hapi plugin that adds http to https redirection
