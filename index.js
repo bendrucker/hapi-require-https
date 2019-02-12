@@ -13,7 +13,7 @@ function register (server, options) {
 
     if (!redirect) return h.continue
     return h
-      .redirect('https://' + host + request.url.path)
+      .redirect('https://' + host + (request.url.path || request.url.pathname + request.url.search))
       .takeover()
       .code(301)
   })
