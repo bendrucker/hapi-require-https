@@ -4,7 +4,7 @@
   "description": "hapi http -> https redirection",
   "main": "index.js",
   "scripts": {
-    "test": "standard && test-peer-range hapi",
+    "test": "standard && test-peer-range @hapi/hapi",
     "test-main": "tape test.js"
   },
   "repository": {
@@ -34,7 +34,7 @@
     "test-peer-range": "~2.0.0"
   },
   "peerDependencies": {
-    "hapi": ">=17 <19"
+    "@hapi/hapi": ">=18"
   },
   "files": [
     "*.js"
