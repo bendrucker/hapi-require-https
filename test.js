@@ -1,7 +1,7 @@
 'use strict'
 
 var test = require('blue-tape')
-var hapi = require('hapi')
+var hapi = require('@hapi/hapi')
 var plugin = require('./')
 
 test('proxied requests', function (t) {
