@@ -30,7 +30,7 @@
   "devDependencies": {
     "blue-tape": "^1.0.0",
     "standard": "^14.0.0",
-    "tape": "^4.8.0",
+    "tape": "^5.0.0",
     "test-peer-range": "~2.0.0"
   },
   "peerDependencies": {
