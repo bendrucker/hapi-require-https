@@ -1,8 +1,8 @@
 'use strict'
 
-var test = require('blue-tape')
-var hapi = require('@hapi/hapi')
-var plugin = require('./')
+const test = require('blue-tape')
+const hapi = require('@hapi/hapi')
+const plugin = require('./')
 
 test('proxied requests', function (t) {
   t.plan(2)
@@ -89,7 +89,7 @@ test('x-forward-host support', function (t) {
 })
 
 function Server (options) {
-  var server = new hapi.Server()
+  const server = new hapi.Server()
   server.register({ plugin, options })
   server.route({
     method: 'GET',
