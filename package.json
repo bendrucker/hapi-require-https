@@ -39,5 +39,8 @@
   "files": [
     "*.js"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "node": ">= 12"
+  }
 }
