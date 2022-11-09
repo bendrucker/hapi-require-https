@@ -7,7 +7,7 @@ By default, any incoming request with `'http'` in `X-Forwarded-Proto` will be re
 
 ## Usage
 
-Just [register the plugin](https://github.com/hapijs/hapi/blob/master/API.md#server.register()) and go!
+Just [register the plugin](https://hapi.dev/api/#-await-serverregisterplugins-options) and go!
 
 ```js
 server.register({
@@ -20,7 +20,7 @@ server.register({
 
 #### `plugin.register(server, [options])`
 
-Registers the plugin to run `onRequest` in the [request lifecycle](http://hapijs.com/api#request-lifecycle). 
+Registers the plugin to run `onRequest` in the [request lifecycle](https://hapi.dev/api/#request-lifecycle). 
 
 ##### options
 
