@@ -35,7 +35,7 @@
     "test-peer-range": "^3.0.0"
   },
   "peerDependencies": {
-    "@hapi/hapi": ">=19"
+    "@hapi/hapi": ">=20"
   },
   "files": [
     "*.js"
