@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/bendrucker/hapi-require-https",
   "devDependencies": {
-    "@hapi/hapi": "^20.0.1",
+    "@hapi/hapi": "^21.0.0",
     "blue-tape": "^1.0.0",
     "standard": "^17.0.0",
     "tape": "^5.0.1",
